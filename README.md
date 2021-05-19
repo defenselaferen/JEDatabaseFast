@@ -129,3 +129,33 @@ int main(int argc, const char* argv[]) {
   return 0;
 }
 ```
+
+### Function Get Length And Type
+How do I get the length or type Dbmem.
+You can using function for length: `length` and function for type: `type`.
+Parameter of that's function:
+```CPP
+int length();
+std::string type(int id);
+```
+
+For example for using it:
+```CPP
+#include <iostream>
+#include <dbmem.hpp>
+
+int main(int argc, const char* argv[]) {
+  Dbmem* db = new Dbmem();
+  
+  // integet insert function
+  db->add_integer(10);
+  
+  // integet insert function
+  db->add_string("Hello, World!");
+  
+  std::cout << db->length() << std::end; // output 2
+  std::cout << db->type(1) << std::endl; // output "string"
+  
+  return 0;
+}
+```
